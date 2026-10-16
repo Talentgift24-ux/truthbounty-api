@@ -33,6 +33,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Generate prerequisites
+        run: npm run generate:prerequisites
+
+      - name: Verify toolchain and compiler parity
+        run: npm run parity:check
+
       - name: Type check
         run: npm run type-check
 
